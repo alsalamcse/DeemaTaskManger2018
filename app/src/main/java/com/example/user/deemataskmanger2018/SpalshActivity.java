@@ -25,7 +25,7 @@ public class SpalshActivity extends AppCompatActivity {
         public void run(){
             try {
                 sleep(3000);
-                Intent  i= new Intent(SpalshActivity.this,MainTabsActivity.class);
+                Intent  i= new Intent(SpalshActivity.this,loginActivity.class);
                 startActivity(i);
             } catch (InterruptedException e) {
                 e.printStackTrace();
