@@ -7,9 +7,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 public class SingUpActivity extends AppCompatActivity {
     private EditText edFirstName,edLastName,edPhone,edEmail2,edPassWord2;
     private Button btnSave;
+    FirebaseAuth auth;//to establish sign in sign up
+    FirebaseUser user;//user
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +34,8 @@ public class SingUpActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        auth=FirebaseAuth.getInstance();
+        user=auth.getCurrentUser();//
 
 
     }
