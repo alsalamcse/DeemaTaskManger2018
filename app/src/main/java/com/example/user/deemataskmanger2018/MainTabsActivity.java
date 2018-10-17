@@ -179,23 +179,10 @@ public class MainTabsActivity extends AppCompatActivity {
                 return "History";
             if (position == 2)
                 return "Profile";
-            return "noname";
+            return "NOname";
 
         }
-
-        public class MyThread extends Thread {
-            @Override
-            public void run() {
-                try {
-                    sleep(3000);
-                    Intent i = new Intent(MainTabsActivity.this, loginActivity.class);
-                    startActivity(i);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
-        }
-    }
 }
+    }
+
 
