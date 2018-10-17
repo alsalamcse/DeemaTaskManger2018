@@ -1,5 +1,6 @@
 package com.example.user.deemataskmanger2018;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -179,6 +180,20 @@ public class MainTabsActivity extends AppCompatActivity {
             if (position == 2)
                 return "Profile";
             return "noname";
+
+        }
+
+        public class MyThread extends Thread {
+            @Override
+            public void run() {
+                try {
+                    sleep(3000);
+                    Intent i = new Intent(MainTabsActivity.this, loginActivity.class);
+                    startActivity(i);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
 
         }
     }
