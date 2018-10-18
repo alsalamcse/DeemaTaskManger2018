@@ -21,8 +21,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="FirstName"
                 android:inputType="textPersonName"
-                android:text="FirstName"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="16dp" />
 
@@ -31,32 +31,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="LastName" />
+                android:hint="LastName"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/edPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Phone" />
+                android:hint="Phone"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/edEmail2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Email" />
+                android:hint="Email"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/edPassWord2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="PassWord" />
+                android:hint="PassWord"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edPassWord3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="password "
+                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/btnSave"
