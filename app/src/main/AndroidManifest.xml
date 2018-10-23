@@ -21,7 +21,8 @@
             android:label="@string/title_activity_main_tabs"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".loginActivity" />
-        <activity android:name=".SingUpActivity"></activity>
+        <activity android:name=".SingUpActivity" />
+        <activity android:name=".AddTabsActivity"></activity>
     </application>
 
 </manifest>
