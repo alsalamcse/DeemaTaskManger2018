@@ -11,13 +11,69 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/etTittle"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Tittle"
+            android:inputType="textPersonName" />
 
-        </LinearLayout>
+        <EditText
+            android:id="@+id/etTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Task"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Date"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/btnDataPicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data PICKER" />
+
+        <TextView
+            android:id="@+id/tvImprtant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="important" />
+
+        <SeekBar
+            android:id="@+id/skbrImportant"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progress="3" />
+
+        <TextView
+            android:id="@+id/;"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Necessary" />
+
+        <SeekBar
+            android:id="@+id/skbrNecessary"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progress="3" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save" />
 
     </LinearLayout>
 
