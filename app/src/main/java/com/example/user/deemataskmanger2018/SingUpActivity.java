@@ -102,6 +102,14 @@ public class SingUpActivity extends AppCompatActivity {
                     Toast.makeText(SingUpActivity.this, "Authentication failed" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     task.getException().printStackTrace();
                 }}});
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // كود الانتقال إلى الشاشة الأخرى
+                Intent i=new Intent(SingUpActivity.this, loginActivity.class);
+                startActivity(i);
+            }
+        });
 
 
             }

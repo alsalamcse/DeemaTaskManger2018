@@ -70,4 +70,18 @@ public class MyTask {
     public void setDueDate(Date dueDate) {
         this.dueDate = dueDate;
     }
+
+    @Override
+    public String toString() {
+        return "MyTask{" +
+                "key='" + key + '\'' +
+                ", tittle='" + tittle + '\'' +
+                ", text='" + text + '\'' +
+                ", important=" + important +
+                ", necessary=" + necessary +
+                ", createdAt=" + createdAt +
+                ", dueDate=" + dueDate +
+                '}';
+    }
 }
+

@@ -26,7 +26,7 @@ public class loginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // كود الانتقال إلى الشاشة الأخرى
-                Intent i=new Intent(loginActivity.this, SpalshActivity.class);
+                Intent i=new Intent(loginActivity.this, MainTabsActivity.class);
                 startActivity(i);
             }
         });

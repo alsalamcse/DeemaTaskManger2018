@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "18748545014",
+    "firebase_url": "https://deemataskmanger2018.firebaseio.com",
+    "project_id": "deemataskmanger2018",
+    "storage_bucket": "deemataskmanger2018.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:18748545014:android:c05868fe9ea47688",
+        "android_client_info": {
+          "package_name": "com.example.user.deemataskmanger2018"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "18748545014-psb14lstssrfb7apijjm8slse2r319fq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.deemataskmanger2018",
+            "certificate_hash": "013f43c9a5d380c46de43c04644418dbe5d2a253"
+          }
+        },
+        {
+          "client_id": "18748545014-6g2bvi02cers35sq8mmhqvo2m9uu9510.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJH8CBBw76AtsX5A8uLYTxz3E033QMaR8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "18748545014-6g2bvi02cers35sq8mmhqvo2m9uu9510.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
