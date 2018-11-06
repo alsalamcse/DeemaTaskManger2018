@@ -40,15 +40,27 @@ public class AddTabsActivity extends AppCompatActivity {
 
     }
 
+
     private void dataHandler() {
+        boolean isok=true;
         String Tittle=etTittle.getText().toString();
-        String Task=etText.getText().toString();
+        String Text=etText.getText().toString();
         String  Date=etDate.getText().toString();
        int important=skbrImportant.getProgress();
        int Necessary=skbrNecessary.getProgress();
-       if(Tittle) {
+       if(Tittle.length()<4)
+       {
+        etTittle.setError("tittle have to be more than 4 char");
+        isok=false;
 
        }
+        if(Text.length()<4)
+        {
+            etText.setError("Text have to be more than 4 char");
+            isok=false;
+
+        }
+
     }
 
     public void onClick(View v) {
