@@ -1,6 +1,7 @@
 package com.example.user.deemataskmanger2018;
 
 import android.app.DatePickerDialog;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +9,17 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.SeekBar;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
+import java.util.Date;
 
 public class AddTabsActivity extends AppCompatActivity {
     private EditText etTittle,etText,etDate;
@@ -48,18 +58,44 @@ public class AddTabsActivity extends AppCompatActivity {
         String  Date=etDate.getText().toString();
        int important=skbrImportant.getProgress();
        int Necessary=skbrNecessary.getProgress();
-       if(Tittle.length()<4)
+       if(Tittle.length()==)
        {
-        etTittle.setError("tittle have to be more than 4 char");
+        etTittle.setError("tittle can not be empty");
         isok=false;
 
        }
-        if(Text.length()<4)
+        if(Text.length()==0)
         {
-            etText.setError("Text have to be more than 4 char");
+            etText.setError("Text can not be empty");
             isok=false;
 
         }
+        if (isok)
+        {
+            MyTask task=new MyTask();
+            task.setCreatedAt(new Date());
+            task.setDueDate(new Date(Date));
+            task.setText(Text);
+            task.setTittle(Tittle);
+            task.setImportant(important);
+            task.setNecessary(Necessary);
+            FirebaseAuth auth=FirebaseAuth.getInstance();
+            task.setOwner(auth.getCurrentUser().getEmail());
+            DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
+            String Key=reference.child("MyTask").push().getKey();
+        task.setKey(Key);
+        reference.child("MyTask").child(Key).setValue(task).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(AddTabsActivity.this,"Add Successfu",Toast)
+                }
+
+            }
+        })
+        }
+
+
 
     }
 

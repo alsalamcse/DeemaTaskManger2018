@@ -83,5 +83,8 @@ public class MyTask {
                 ", dueDate=" + dueDate +
                 '}';
     }
+
+    public void setOwner(String email) {
+    }
 }
 
