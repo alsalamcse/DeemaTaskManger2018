@@ -52,48 +52,49 @@ public class AddTabsActivity extends AppCompatActivity {
 
 
     private void dataHandler() {
-        boolean isok=true;
-        String Tittle=etTittle.getText().toString();
-        String Text=etText.getText().toString();
-        String  Date=etDate.getText().toString();
-       int important=skbrImportant.getProgress();
-       int Necessary=skbrNecessary.getProgress();
-       if(Tittle.length()==)
-       {
-        etTittle.setError("tittle can not be empty");
-        isok=false;
-
-       }
-        if(Text.length()==0)
-        {
-            etText.setError("Text can not be empty");
-            isok=false;
+        boolean isok = true;
+        String Tittle = etTittle.getText().toString();
+        String Text = etText.getText().toString();
+        String Date = etDate.getText().toString();
+        int important = skbrImportant.getProgress();
+        int Necessary = skbrNecessary.getProgress();
+        if (Tittle.length() ==) {
+            etTittle.setError("tittle can not be empty");
+            isok = false;
 
         }
-        if (isok)
-        {
-            MyTask task=new MyTask();
+        if (Text.length() == 0) {
+            etText.setError("Text can not be empty");
+            isok = false;
+
+        }
+        if (isok) {
+            MyTask task = new MyTask();
             task.setCreatedAt(new Date());
             task.setDueDate(new Date(Date));
             task.setText(Text);
             task.setTittle(Tittle);
             task.setImportant(important);
             task.setNecessary(Necessary);
-            FirebaseAuth auth=FirebaseAuth.getInstance();
+            //GET USER EMAIL TO SET IS AS THE OWNER OF THIS TASK
+            FirebaseAuth auth = FirebaseAuth.getInstance();
             task.setOwner(auth.getCurrentUser().getEmail());
-            DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
-            String Key=reference.child("MyTask").push().getKey();
-        task.setKey(Key);
-        reference.child("MyTask").child(Key).setValue(task).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(AddTabsActivity.this,"Add Successfu",Toast)
-                }
+            //TO GET THE DATABASE ROOT REFERENCE
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+            //TO GET UID(UNIVERSAL ID )
+            String Key = reference.child("MyTask").push().getKey();
+            task.setKey(Key);
+            reference.child("MyTask").child(Key).setValue(task).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(AddTabsActivity.this, "Add Successfu", Toast.LENGTH_LONG).show();
+                    }
 
-            }
-        })
+                }
+            });
         }
+
 
 
 
