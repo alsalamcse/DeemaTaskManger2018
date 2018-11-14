@@ -58,7 +58,7 @@ public class AddTabsActivity extends AppCompatActivity {
         String Date = etDate.getText().toString();
         int important = skbrImportant.getProgress();
         int Necessary = skbrNecessary.getProgress();
-        if (Tittle.length() ==) {
+        if (Tittle.length() ==0) {
             etTittle.setError("tittle can not be empty");
             isok = false;
 
