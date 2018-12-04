@@ -22,7 +22,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".loginActivity" />
         <activity android:name=".SingUpActivity" />
-        <activity android:name=".AddTabsActivity"></activity>
+        <activity android:name=".AddTabsActivity" />
+        <activity
+            android:name=".TabActivity"
+            android:label="@string/title_activity_tab"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

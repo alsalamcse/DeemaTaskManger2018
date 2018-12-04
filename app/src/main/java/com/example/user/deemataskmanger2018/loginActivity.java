@@ -56,10 +56,10 @@ public class loginActivity extends AppCompatActivity {
 
 
     private void dataHandler() {
-        boolean isk = true;// if all the fields filled well
+        boolean isok = true;// if all the fields filled well
         String email = edEmail.getText().toString();
         String passWord = edPassWord.getText().toString();
-        boolean isok = true;
+
         if (email.length() < 4 ||
                 email.indexOf('@') < 0 || email.indexOf('.') < 0) {
             edEmail.setError("Wrong Email");
@@ -72,6 +72,7 @@ public class loginActivity extends AppCompatActivity {
 
         }
         if (isok) {
+             SignIn(email,passWord);
 
         }
 
@@ -82,9 +83,9 @@ public class loginActivity extends AppCompatActivity {
             public void  onComplete(@NonNull Task< AuthResult>task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(loginActivity.this, "signIn successful", Toast.LENGTH_SHORT).show();
-                        //Intent intent=new Intent(loginActivity.this,MainTabsActivity.class);
-                       // startActivity(intent);
-                       // finish();
+                        Intent intent=new Intent(loginActivity.this,MainTabsActivity.class);
+                        startActivity(intent);
+                        finish();
                 } else {
                     Toast.makeText(loginActivity.this, "signIn failed." + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     task.getException().printStackTrace();
