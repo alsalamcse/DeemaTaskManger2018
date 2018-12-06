@@ -35,6 +35,7 @@ public class loginActivity extends AppCompatActivity {
         user = auth.getCurrentUser();//
 
 
+
         btnLogIN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +50,6 @@ public class loginActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
 
     }
 
