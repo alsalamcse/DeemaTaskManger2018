@@ -63,14 +63,14 @@ public class MyTasksFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(readTasks(), mListener));
+            recyclerView.setAdapter(new MyItemRecyclerViewAdapter(readTasks(),mListener));
         }
         return view;
     }
 
     private List<MyTask> readTasks()
     {
-        final ArrayList<MyTask> myTasks=null;
+        final ArrayList<MyTask> myTasks=new ArrayList<>();
         //reference to the database root
         DatabaseReference reference= FirebaseDatabase.getInstance().getReference();
         reference.child("MyTask").addValueEventListener(new ValueEventListener() {
